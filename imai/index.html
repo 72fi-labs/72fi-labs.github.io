@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <title>1001000</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    body, html {
+      height: 100%;
+      background: #FFF; /* Change background to white */
+    }
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<canvas></canvas>
+<script>
+// Initialising the canvas
+var canvas = document.querySelector('canvas'),
+    ctx = canvas.getContext('2d');
+
+// Setting up the letters
+var letters = 'lim(x->∞) P(x)=1'.split('');
+
+var fontSize = 10, columns, drops;
+
+// Resize the canvas to fill browser window dynamically
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Recalculate columns and reset drops
+  columns = canvas.width / fontSize;
+  drops = [];
+  for (var i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+}
+
+// Call resizeCanvas initially and every time the window is resized
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Setting up the draw function
+function draw() {
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#808080';
+  ctx.font = fontSize + 'px monospace';
+
+  for (var i = 0; i < drops.length; i++) {
+    var text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i]++;
+    if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+      drops[i] = 0;
+    }
+  }
+}
+
+// Loop the animation
+setInterval(draw, 33);
+</script>
+
+
+
+</body>
+</html>
