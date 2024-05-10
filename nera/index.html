@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nera Systems</title>
+    <title>Coming Soon - Nera Systems</title>
+    <link rel="icon" href="nerasystems_logo.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            height: 100%;
+        body {
+            background-color: #012E6F;
+            color: #FFFFFF;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
             align-items: center;
-            background-color: #ffffff; /* Set background to white */
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
+
         .container {
             text-align: center;
         }
+
         .logo {
-            width: 200px; /* Adjust the size as needed */
+            max-width: 20%;
             height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6vw; /* Reduced font size for smaller screens */
+            background: linear-gradient(90deg, #B78949, #F8EDA0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 10px;
+        }
+
+        .hero p {
+            font-size: 4vw; /* Responsive font size for smaller screens */
+            color: #FFFFFF;
+            margin: 10px 0;
+        }
+
+        .hero a {
+            color: #F8EDA0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero a:hover {
+            color: #B78949;
+        }
+
+        @media (min-width: 600px) {
+            .hero h1 {
+                font-size: 3em; /* Adjusted font size for medium screens */
+            }
+
+            .hero p {
+                font-size: 1.2em; /* Adjusted font size for medium screens */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                max-width: 15%; /* Reduced logo size for larger screens */
+            }
+
+            .hero h1 {
+                font-size: 4em; /* Adjusted font size for larger screens */
+            }
+
+            .hero p {
+                font-size: 1.4em; /* Adjusted font size for larger screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="nerasystems_logo.jpg" alt="Nera Systems Logo" class="logo">
+        <div class="hero">
+            <h1>In stealth mode - more to follow</h1>
+            <p>Reach out to us at <a href="mailto:info@nera.systems">info@nera.systems</a></p>
+        </div>
     </div>
 </body>
 </html>
