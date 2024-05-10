@@ -31,11 +31,24 @@
             height: 100%;
             object-fit: cover;
         }
+
+        @media (max-width: 768px) {
+            .video-background {
+                position: absolute;
+            }
+        }
+
+        @media (orientation: portrait) {
+            .video-background video {
+                width: auto;
+                height: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="video-background">
-        <video autoplay muted loop>
+        <video autoplay muted loop playsinline>
             <source src="b-roll.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
