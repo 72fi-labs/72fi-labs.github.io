@@ -17,7 +17,7 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding: 20px;
+            padding: 50px 20px 20px; /* Increased padding at the top */
             box-sizing: border-box;
         }
 
@@ -26,7 +26,7 @@
         }
 
         .logo {
-            max-width: 30%;
+            max-width: 50%;
             height: auto;
             margin-bottom: 30px; /* Increased margin to add space between logo and text */
         }
@@ -57,6 +57,10 @@
         }
 
         @media (min-width: 600px) {
+            .logo {
+                max-width: 30%; /* Adjust logo size for medium screens */
+            }
+
             .hero h1 {
                 font-size: 3em; /* Adjusted font size for medium screens */
             }
